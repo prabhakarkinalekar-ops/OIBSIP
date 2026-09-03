@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eef2f7;
+}
+
+/* Calculator Container */
+.calculator {
+    width: 360px;
+    padding: 24px;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Header */
+.calculator-header {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.calculator-header h1 {
+    font-size: 27px;
+    color: #1b1b1b;
+    margin-bottom: 5px;
+}
+
+.calculator-header p {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Display */
+.display {
+    min-height: 105px;
+    padding: 15px 18px;
+    margin-bottom: 18px;
+    border-radius: 15px;
+    background: #181818;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    overflow: hidden;
+}
+
+#previous-display {
+    width: 100%;
+    min-height: 24px;
+    color: #a7a7a7;
+    font-size: 16px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#current-display {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 38px;
+    font-weight: 600;
+    text-align: right;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Button Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 11px;
+}
+
+/* Buttons */
+button {
+    height: 62px;
+    border: none;
+    border-radius: 14px;
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.12s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+/* Number Buttons */
+.number {
+    background: #f0f1f3;
+    color: #222;
+}
+
+/* Function Buttons */
+.function {
+    background: #e1e3e6;
+    color: #222;
+}
+
+/* Operator Buttons */
+.operator {
+    background: #dceaff;
+    color: #1557a6;
+}
+
+/* Equals Button */
+.equals {
+    height: 135px;
+    grid-row: span 2;
+
+    background: #1557a6;
+    color: white;
+
+    box-shadow: 0 6px 15px rgba(21, 87, 166, 0.25);
+}
+
+/* Zero Button */
+.zero {
+    grid-column: span 2;
+}
+
+/* Mobile Responsive */
+@media (max-width: 450px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .calculator {
+        width: 100%;
+        max-width: 360px;
+        padding: 18px;
+    }
+
+    button {
+        height: 58px;
+    }
+
+    .equals {
+        height: 127px;
+    }
+
+    #current-display {
+        font-size: 32px;
+    }
+}
